@@ -1,0 +1,28 @@
+public int find_min_iterative () {
+		int min = 0;				//O(1)
+		for(int i=0;i<arr.length;i++) {		//O(1)
+			if(arr[i]<arr[min]){			//O(n)
+				min = i;		//O(1)
+			}
+		}
+		return min;				//O(1)
+	}
+							//running time is O(n)
+
+public int find_min_recursive() {
+	return find_min_recursive(0,arr.length-1);	//O(1)
+}
+
+public int find_min_recursive (int start, int end) {
+	if (start==end){				//O(1)
+		return start;				//O(1)
+	}
+	if (arr[start]<=arr[end]){			//O(1)
+		end -= 1;				//O(1)
+	} 
+	else {						//O(1)
+		start += 1;				//O(1)
+	}	
+	return find_min_recursive(start,end);		//O(n/2)
+}
+							//running time is O(n)
